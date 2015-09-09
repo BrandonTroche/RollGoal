@@ -3,10 +3,12 @@ import Foundation
 class MainScene: CCNode {
 
     weak var clickYo:CCNodeGradient!
+    weak var gamePhysicsNode:CCPhysicsNode!
     
     
     func didLoadFromCCB() {
         userInteractionEnabled = true
+        gamePhysicsNode.debugDraw = true
     }
     
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!){
