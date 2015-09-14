@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Class: CCSprite {
+class Player: CCSprite {
 
     override func update(delta: CCTime) {
 
