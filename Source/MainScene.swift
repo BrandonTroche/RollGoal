@@ -7,37 +7,22 @@ import Foundation
 
 class MainScene: CCNode, CCPhysicsCollisionDelegate {
 
-//    weak var gamePhysicsNode:CCPhysicsNode!
     weak var gamePhysicsNode:CCPhysicsNode!
-    weak var left:LeftButton!
-    weak var right:RightButton!
-    
-    var gravity: Int = 0
-    
+    weak var player:CCSprite!
     
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
         gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
     }
     
-//    override func update(delta: CCTime) {
-//        gravity = left.
-//        gamePhysicsNode.gravity.x = gravity
-//    }
+    func left(){
+        player.physicsBody.applyImpulse(ccp(-75, 0)) //Instead of using gravity I have decided to apply impulses instead as it keeps things simpler and it has a nice effect similar to what I would like to convey.
+    }
     
-//    func Left(){
-//        self.gamePhysicsNode.gravity.x += -600    //placeholder test for negative gravity influence
-//        println(gamePhysicsNode.gravity.x)      //print to console to check the value is changing
-//    }
-    
-//    func Right(){
-//        self.gamePhysicsNode.gravity.x += 600        //placeholder test for positive gravity influence
-//        println(gamePhysicsNode.gravity.x)      //print to console to check the value is changing
-//    }
-    
-//    func Reset(){
-//        gamePhysicsNode.gravity.x = 0      //reset horizontal gravity to 0 for play testing purposes
-//    }
+    func right(){
+        player.physicsBody.applyImpulse(ccp(75, 0)) //In case it is not clear this apply an impulse on the x axis where as positive numbers send it to the right and negative number send it to the left.
+
+    }
 
 }
 
