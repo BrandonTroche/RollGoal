@@ -15,6 +15,7 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
     }
     
+    
     func left(){
         player.physicsBody.applyImpulse(ccp(-75, 0)) //Instead of using gravity I have decided to apply impulses instead as it keeps things simpler and it has a nice effect similar to what I would like to convey.
     }
