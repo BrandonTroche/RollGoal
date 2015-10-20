@@ -10,33 +10,48 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     weak var gamePhysicsNode:CCPhysicsNode!
     weak var player:CCSprite!
     
+    var sinceSpawn:CCTime = 0
+    
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
         gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
+        spawnFloorSequenceOne()
+        spawnFloorSequenceTwo()
+
     }
     
     func spawnFloorSequenceOne(){
-      //  gamePhysicsNode.addChild()
+        var aFloor = CCBReader.load("Floor") as! Floor
+        gamePhysicsNode.addChild(aFloor)
+        aFloor.position = ccp(96, 140)
     }
     
     func spawnFloorSequenceTwo(){
-        
+        var aFloor = CCBReader.load("Floor") as! Floor
+        gamePhysicsNode.addChild(aFloor)
+        aFloor.position = ccp(38, 275)
     }
     
     func spawnFloorSequenceThree(){
-        
+        var aFloor = CCBReader.load("Floor") as! Floor
+        gamePhysicsNode.addChild(aFloor)
+        aFloor.position = ccp(96, 364)
     }
     
     func spawnFloorSequenceFour(){
-        
+        var aFloor = CCBReader.load("Floor") as! Floor
+        gamePhysicsNode.addChild(aFloor)
+        aFloor.position = ccp(100, 400)
     }
     
     func spawnFloorSequenceFive(){
-        
+        var aFloor = CCBReader.load("Floor") as! Floor
+        gamePhysicsNode.addChild(aFloor)
+        aFloor.position = ccp(80, 180)
     }
     
     func spawn(){
-        let randNumber = CGFloat(arc4random_uniform(100))
+        let randNumber = CGFloat(arc4random_uniform(100))//Generate a random number from 0 to 100, depending on the number then I spawn one of the pre-set floors.
         if (randNumber <= 20) {
             spawnFloorSequenceOne()
         } else if (randNumber <= 40) && (randNumber > 20){
@@ -52,7 +67,12 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     
     override func update(delta: CCTime) {
-        spawn();
+        sinceSpawn += delta
+        if(sinceSpawn > 3){
+            //spawn()
+            spawnFloorSequenceOne()
+            sinceSpawn = 0
+        }
     }
     
     
