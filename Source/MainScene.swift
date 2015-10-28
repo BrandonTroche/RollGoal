@@ -1,8 +1,12 @@
 import Foundation
 
-/*Notes:
+/*
+Notes:
     Negative x value gravity pushes <--- this way
     Positive x value gravity pushes ---> this way
+
+    Bounding positions on boundaries are x = 38.4 on the left and x = 345.6
+    The distance between the boundaries in terms of the x-axis is 307.2
 */
 
 class MainScene: CCNode, CCPhysicsCollisionDelegate {
@@ -15,53 +19,58 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
         gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
-        spawnFloorSequenceOne()
-        spawnFloorSequenceTwo()
+       /* spawnFloorSequenceOne(80)
+        spawnFloorSequenceTwo(100)
+        spawnFloorSequenceThree(120)
+        spawnFloorSequenceFour(140)
+        spawnFloorSequenceFive(190)*/
+        spawnFloorSequenceTwo(0)
+
 
     }
     
-    func spawnFloorSequenceOne(){
+    func spawnFloorSequenceOne(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
         gamePhysicsNode.addChild(aFloor)
-        aFloor.position = ccp(96, 140)
+        aFloor.position = ccp(96, CGFloat(x))
     }
     
-    func spawnFloorSequenceTwo(){
-        var aFloor = CCBReader.load("Floor") as! Floor
+    func spawnFloorSequenceTwo(var x: Int){
+        var aFloor = CCBReader.load("Floor2") as! Floor
         gamePhysicsNode.addChild(aFloor)
-        aFloor.position = ccp(38, 275)
+        aFloor.position = ccp(40, CGFloat(x))
     }
     
-    func spawnFloorSequenceThree(){
+    func spawnFloorSequenceThree(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
         gamePhysicsNode.addChild(aFloor)
-        aFloor.position = ccp(96, 364)
+        aFloor.position = ccp(120, CGFloat(x))
     }
     
-    func spawnFloorSequenceFour(){
+    func spawnFloorSequenceFour(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
         gamePhysicsNode.addChild(aFloor)
-        aFloor.position = ccp(100, 400)
+        aFloor.position = ccp(100, CGFloat(x))
     }
     
-    func spawnFloorSequenceFive(){
+    func spawnFloorSequenceFive(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
         gamePhysicsNode.addChild(aFloor)
-        aFloor.position = ccp(80, 180)
+        aFloor.position = ccp(80, CGFloat(x))
     }
     
     func spawn(){
         let randNumber = CGFloat(arc4random_uniform(100))//Generate a random number from 0 to 100, depending on the number then I spawn one of the pre-set floors.
         if (randNumber <= 20) {
-            spawnFloorSequenceOne()
+            spawnFloorSequenceOne(0)
         } else if (randNumber <= 40) && (randNumber > 20){
-            spawnFloorSequenceTwo()
+            spawnFloorSequenceTwo(0)
         } else if (randNumber <= 60) && (randNumber > 40){
-            spawnFloorSequenceThree()
+            spawnFloorSequenceThree(0)
         } else if (randNumber <= 80) && (randNumber > 60){
-            spawnFloorSequenceFour()
+            spawnFloorSequenceFour(0)
         } else if (randNumber <= 100) && (randNumber > 80){
-            spawnFloorSequenceFive()
+            spawnFloorSequenceFive(0)
         }
     }
     
@@ -70,7 +79,8 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         sinceSpawn += delta
         if(sinceSpawn > 3){
             //spawn()
-            spawnFloorSequenceOne()
+            //spawnFloorSequenceOne(0)
+            spawnFloorSequenceTwo(0)
             sinceSpawn = 0
         }
     }

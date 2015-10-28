@@ -11,9 +11,9 @@ import Foundation
 class Floor: CCNode {
     
     override func update(delta: CCTime) {
-        var n=0.5
+        var velocity = 0.5
         
-        self.position.y += CGFloat(n)
+        self.position.y += CGFloat(velocity)
         
     
     }
