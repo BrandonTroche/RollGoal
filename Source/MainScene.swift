@@ -14,6 +14,16 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     weak var gamePhysicsNode:CCPhysicsNode!
     weak var player:CCSprite!
     
+    var floorQueue = [CCNode]() /* "Queue" for pushing and popping floors from the physics node to make
+                                    for easier adding of parent and removing from parent in the right
+                                    order. This is implemented as an array for simplicity.
+    
+                                    My reasoning for this is floors are spawned in order and rather than 
+                                    removing these floors from the parent as the collide with some physics
+                                    body I can simply call a custom "pop()" function on this or any other
+                                    case that I should decide to do so.
+                                */
+    
     var sinceSpawn:CCTime = 0
     
     func didLoadFromCCB() {
@@ -25,38 +35,56 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         spawnFloorSequenceFour(140)
         spawnFloorSequenceFive(190)*/
         spawnFloorSequenceTwo(0)
-
+        print(floorQueue[floorQueue.count - 1])
 
     }
     
     func spawnFloorSequenceOne(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
-        gamePhysicsNode.addChild(aFloor)
+        parentPhysics(aFloor)
+        push(aFloor)
         aFloor.position = ccp(96, CGFloat(x))
     }
     
     func spawnFloorSequenceTwo(var x: Int){
         var aFloor = CCBReader.load("Floor2") as! Floor
-        gamePhysicsNode.addChild(aFloor)
+        parentPhysics(aFloor)
+        push(aFloor)
+        //gamePhysicsNode.addChild(aFloor)
         aFloor.position = ccp(40, CGFloat(x))
     }
     
     func spawnFloorSequenceThree(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
-        gamePhysicsNode.addChild(aFloor)
+        parentPhysics(aFloor)
+        push(aFloor)
         aFloor.position = ccp(120, CGFloat(x))
     }
     
     func spawnFloorSequenceFour(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
-        gamePhysicsNode.addChild(aFloor)
+        parentPhysics(aFloor)
+        push(aFloor)
         aFloor.position = ccp(100, CGFloat(x))
     }
     
     func spawnFloorSequenceFive(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
-        gamePhysicsNode.addChild(aFloor)
+        parentPhysics(aFloor)
+        push(aFloor)
         aFloor.position = ccp(80, CGFloat(x))
+    }
+    
+    func parentPhysics(var x: CCNode!){
+        gamePhysicsNode.addChild(x)
+    }
+    
+    func push(var x:CCNode!){
+        floorQueue.append(x)
+    }
+    
+    func pop(){
+        floorQueue.removeAtIndex(0)
     }
     
     func spawn(){
@@ -81,7 +109,9 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
             //spawn()
             //spawnFloorSequenceOne(0)
             spawnFloorSequenceTwo(0)
+            print(floorQueue[floorQueue.count - 1])
             sinceSpawn = 0
+            
         }
     }
     
