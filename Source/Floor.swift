@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Floor: CCNode {
+class Floor: CCSprite {
     
     override func update(delta: CCTime) {
-        var velocity = 0.5
+        var velocity = 1.0
         
         self.position.y += CGFloat(velocity)
         

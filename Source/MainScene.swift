@@ -13,6 +13,8 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
 
     weak var gamePhysicsNode:CCPhysicsNode!
     weak var player:CCSprite!
+    weak var scoreLabel:CCLabelTTF!
+    
     
     var floorQueue = [CCNode]() /* "Queue" for pushing and popping floors from the physics node to make
                                     for easier adding of parent and removing from parent in the right
@@ -28,22 +30,24 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
-        gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
+        //gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
        /* spawnFloorSequenceOne(80)
         spawnFloorSequenceTwo(100)
         spawnFloorSequenceThree(120)
         spawnFloorSequenceFour(140)
         spawnFloorSequenceFive(190)*/
-        spawnFloorSequenceTwo(0)
+        spawnFloorSequenceOne(0)
         print(floorQueue[floorQueue.count - 1])
 
     }
     
     func spawnFloorSequenceOne(var x: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
+        aFloor.scaleX = 0.25
+        aFloor.scaleY = 0.25
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(96, CGFloat(x))
+        aFloor.position = ccp(20, CGFloat(x))
     }
     
     func spawnFloorSequenceTwo(var x: Int){
@@ -105,10 +109,10 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     override func update(delta: CCTime) {
         sinceSpawn += delta
-        if(sinceSpawn > 3){
+        if(sinceSpawn > 5){
             //spawn()
-            //spawnFloorSequenceOne(0)
-            spawnFloorSequenceTwo(0)
+            spawnFloorSequenceOne(0)
+            //spawnFloorSequenceTwo(0)
             print(floorQueue[floorQueue.count - 1])
             sinceSpawn = 0
             
@@ -117,11 +121,11 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     
     func left(){
-        player.physicsBody.applyImpulse(ccp(-75, 0)) //Instead of using gravity I have decided to apply impulses instead as it keeps things simpler and it has a nice effect similar to what I would like to convey.
+        player.physicsBody.applyImpulse(ccp(-1275, 0)) //Instead of using gravity I have decided to apply impulses instead as it keeps things simpler and it has a nice effect similar to what I would like to convey.
     }
     
     func right(){
-        player.physicsBody.applyImpulse(ccp(75, 0)) //In case it is not clear this apply an impulse on the x axis where as positive numbers send it to the right and negative number send it to the left.
+        player.physicsBody.applyImpulse(ccp(1275, 0)) //In case it is not clear this apply an impulse on the x axis where as positive numbers send it to the right and negative number send it to the left.
 
     }
 
