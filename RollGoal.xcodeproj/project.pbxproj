@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		49703F671BC5FFE20017716C /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49703F661BC5FFE20017716C /* Floor.swift */; };
-		49BCFBC81BF18AC800476BD5 /* FloorQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCFBC71BF18AC800476BD5 /* FloorQueue.swift */; };
 		5B121030197484FA004C1E1D /* RollGoalActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* RollGoalActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -151,7 +150,6 @@
 
 /* Begin PBXFileReference section */
 		49703F661BC5FFE20017716C /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Floor.swift; path = Source/Floor.swift; sourceTree = "<group>"; };
-		49BCFBC71BF18AC800476BD5 /* FloorQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloorQueue.swift; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -441,7 +439,6 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				49703F661BC5FFE20017716C /* Floor.swift */,
-				49BCFBC71BF18AC800476BD5 /* FloorQueue.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -821,7 +818,6 @@
 				49703F671BC5FFE20017716C /* Floor.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
-				49BCFBC81BF18AC800476BD5 /* FloorQueue.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
