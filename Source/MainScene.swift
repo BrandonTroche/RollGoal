@@ -15,7 +15,6 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     weak var player:CCSprite!
     weak var scoreLabel:CCLabelTTF!
     
-    
     var floorQueue = [CCNode]() /* "Queue" for pushing and popping floors from the physics node to make
                                     for easier adding of parent and removing from parent in the right
                                     order. This is implemented as an array for simplicity.
@@ -27,10 +26,11 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
                                 */
     
     var sinceSpawn:CCTime = 0
+    var currentPoints = 0
     
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
-        //gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
+        gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
        /* spawnFloorSequenceOne(80)
         spawnFloorSequenceTwo(100)
         spawnFloorSequenceThree(120)
@@ -38,6 +38,8 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         spawnFloorSequenceFive(190)*/
         spawnFloorSequenceOne(0)
         print(floorQueue[floorQueue.count - 1])
+        gamePhysicsNode.collisionDelegate = self
+
 
     }
     
@@ -104,6 +106,14 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         } else if (randNumber <= 100) && (randNumber > 80){
             spawnFloorSequenceFive(0)
         }
+    }
+    
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCSprite!, goal: CCNode!) -> Bool {
+        goal.removeFromParent()
+        currentPoints++
+        scoreLabel.string = String(currentPoints)
+        println("Collision happened")
+        return true
     }
     
     
