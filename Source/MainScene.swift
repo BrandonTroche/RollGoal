@@ -14,6 +14,7 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     weak var gamePhysicsNode:CCPhysicsNode!
     weak var player:CCSprite!
     weak var scoreLabel:CCLabelTTF!
+    weak var topBoundary:CCNode!
     
     var floorQueue = [CCNode]() /* "Queue" for pushing and popping floors from the physics node to make
                                     for easier adding of parent and removing from parent in the right
@@ -31,6 +32,7 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
         gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
+        topBoundary.physicsBody.sensor = true
        /* spawnFloorSequenceOne(80)
         spawnFloorSequenceTwo(100)
         spawnFloorSequenceThree(120)
@@ -116,6 +118,18 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         return true
     }
     
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, death: CCNode!) -> Bool {
+        let scene = CCBReader.loadAsScene("MainScene")
+        CCDirector.sharedDirector().presentScene(scene)
+        return true
+    }
+    
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, floor: CCNode!, death: CCNode!) -> Bool {
+        gamePhysicsNode.removeChild(floorQueue[0])
+        pop()
+        //print(floorQueue.count)
+        return true
+    }
     
     override func update(delta: CCTime) {
         sinceSpawn += delta
@@ -131,11 +145,11 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     
     func left(){
-        player.physicsBody.applyImpulse(ccp(-1275, 0)) //Instead of using gravity I have decided to apply impulses instead as it keeps things simpler and it has a nice effect similar to what I would like to convey.
+        player.physicsBody.applyImpulse(ccp(-127500, 0)) //Instead of using gravity I have decided to apply impulses instead as it keeps things simpler and it has a nice effect similar to what I would like to convey.
     }
     
     func right(){
-        player.physicsBody.applyImpulse(ccp(1275, 0)) //In case it is not clear this apply an impulse on the x axis where as positive numbers send it to the right and negative number send it to the left.
+        player.physicsBody.applyImpulse(ccp(127500, 0)) //In case it is not clear this apply an impulse on the x axis where as positive numbers send it to the right and negative number send it to the left.
 
     }
 
