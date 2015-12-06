@@ -9,12 +9,18 @@ Notes:
     The distance between the boundaries in terms of the x-axis is 307.2
 */
 
+enum CurrentGameState{
+    case playing, paused
+}
+
+
 class MainScene: CCNode, CCPhysicsCollisionDelegate {
 
     weak var gamePhysicsNode:CCPhysicsNode!
     weak var player:CCSprite!
     weak var scoreLabel:CCLabelTTF!
     weak var topBoundary:CCNode!
+    weak var gameOverUI: gameOver!
     
     var floorQueue = [CCNode]() /* "Queue" for pushing and popping floors from the physics node to make
                                     for easier adding of parent and removing from parent in the right
@@ -28,6 +34,8 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     var sinceSpawn:CCTime = 0
     var currentPoints = 0
+    var gameState: CurrentGameState = .playing
+
     
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
@@ -119,8 +127,10 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     }
     
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, death: CCNode!) -> Bool {
-        let scene = CCBReader.loadAsScene("MainScene")
-        CCDirector.sharedDirector().presentScene(scene)
+        gameOverUI.setScore(currentPoints)
+        self.animationManager.runAnimationsForSequenceNamed("gameOver")
+        gamePhysicsNode.paused = true
+        gameState = .paused
         return true
     }
     
@@ -132,14 +142,19 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     }
     
     override func update(delta: CCTime) {
-        sinceSpawn += delta
-        if(sinceSpawn > 5){
-            //spawn()
-            spawnFloorSequenceOne(0)
-            //spawnFloorSequenceTwo(0)
-            print(floorQueue[floorQueue.count - 1])
-            sinceSpawn = 0
+        if(gameState == .playing){
+       
+            sinceSpawn += delta
+           
+                if(sinceSpawn > 5){
+                    //spawn()
+                    spawnFloorSequenceOne(0)
+                    //spawnFloorSequenceTwo(0)
+                    print(floorQueue[floorQueue.count - 1])
+           
+                    sinceSpawn = 0
             
+            }
         }
     }
     
