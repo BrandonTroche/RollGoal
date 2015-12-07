@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,7 +41,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>baseClass</key>
 				<string>CCNode</string>
 				<key>children</key>
@@ -49,7 +49,7 @@
 				<key>customClass</key>
 				<string>Goal</string>
 				<key>displayName</key>
-				<string>Goal</string>
+				<string>CCNode</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -57,9 +57,9 @@
 				<key>physicsBody</key>
 				<dict>
 					<key>affectedByGravity</key>
-					<false/>
+					<true/>
 					<key>allowsRotation</key>
-					<false/>
+					<true/>
 					<key>bodyShape</key>
 					<integer>0</integer>
 					<key>collisionCategories</key>
@@ -75,9 +75,9 @@
 					<key>dynamic</key>
 					<false/>
 					<key>elasticity</key>
-					<real>0.10000000149011612</real>
+					<real>0.30000001192092896</real>
 					<key>friction</key>
-					<real>0.10000000149011612</real>
+					<real>0.30000001192092896</real>
 					<key>points</key>
 					<array>
 						<array>
@@ -136,8 +136,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>1165.9044189453125</real>
-							<real>433.43807983398438</real>
+							<real>41.253574371337891</real>
+							<real>461.8675537109375</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -163,7 +163,7 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>1</real>
 							<real>0.0</real>
 						</array>
 					</dict>
@@ -181,8 +181,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -210,50 +208,50 @@
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
-			<real>0.10000000149011612</real>
+			<real>1</real>
 			<key>dynamic</key>
 			<false/>
 			<key>elasticity</key>
-			<real>0.0</real>
+			<real>0.30000001192092896</real>
 			<key>friction</key>
-			<real>0.0</real>
+			<real>0.30000001192092896</real>
 			<key>points</key>
 			<array>
 				<array>
-					<real>53.4921875</real>
-					<real>399.50784301757812</real>
+					<real>46.6796875</real>
+					<real>427.01568603515625</real>
 				</array>
 				<array>
-					<real>51.515625</real>
-					<real>490.69534301757812</real>
+					<real>46.4921875</real>
+					<real>489.3359375</real>
 				</array>
 				<array>
-					<real>1166.875</real>
-					<real>486.54690551757812</real>
+					<real>1176.890625</real>
+					<real>490.50006103515625</real>
 				</array>
 				<array>
-					<real>1166.875</real>
-					<real>404.64846801757812</real>
+					<real>1175.671875</real>
+					<real>427.35943603515625</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>1166.875</real>
-						<real>404.64846801757812</real>
+						<real>1175.671875</real>
+						<real>427.35943603515625</real>
 					</array>
 					<array>
-						<real>1166.875</real>
-						<real>486.54690551757812</real>
+						<real>1176.890625</real>
+						<real>490.50006103515625</real>
 					</array>
 					<array>
-						<real>51.515625</real>
-						<real>490.69534301757812</real>
+						<real>46.4921875</real>
+						<real>489.3359375</real>
 					</array>
 					<array>
-						<real>53.4921875</real>
-						<real>399.50784301757812</real>
+						<real>46.6796875</real>
+						<real>427.01568603515625</real>
 					</array>
 				</array>
 			</array>
@@ -289,8 +287,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.020162500441074371</real>
-					<real>0.37178754806518555</real>
+					<real>0.019999999552965164</real>
+					<real>0.37200000882148743</real>
 				</array>
 			</dict>
 			<dict>
@@ -350,6 +348,8 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

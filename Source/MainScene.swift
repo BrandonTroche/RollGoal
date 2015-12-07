@@ -53,42 +53,46 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
 
     }
     
-    func spawnFloorSequenceOne(var x: Int){
+    func spawnFloorSequenceOne(var y: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
         aFloor.scaleX = 0.25
         aFloor.scaleY = 0.25
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(20, CGFloat(x))
+        aFloor.position = ccp(20, CGFloat(y))
     }
     
-    func spawnFloorSequenceTwo(var x: Int){
+    func spawnFloorSequenceTwo(var y: Int){
         var aFloor = CCBReader.load("Floor2") as! Floor
+        aFloor.scaleX = 0.12
+        aFloor.scaleY = 0.23
         parentPhysics(aFloor)
         push(aFloor)
         //gamePhysicsNode.addChild(aFloor)
-        aFloor.position = ccp(40, CGFloat(x))
+        aFloor.position = ccp(30, CGFloat(y))
     }
     
-    func spawnFloorSequenceThree(var x: Int){
-        var aFloor = CCBReader.load("Floor") as! Floor
+    func spawnFloorSequenceThree(var y: Int){
+        var aFloor = CCBReader.load("Floor3") as! Floor
+        aFloor.scaleX = 0.25
+        aFloor.scaleY = 0.25
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(120, CGFloat(x))
+        aFloor.position = ccp(70, CGFloat(y))
     }
     
-    func spawnFloorSequenceFour(var x: Int){
-        var aFloor = CCBReader.load("Floor") as! Floor
+    func spawnFloorSequenceFour(var y: Int){
+        var aFloor = CCBReader.load("Floor4") as! Floor
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(100, CGFloat(x))
+        aFloor.position = ccp(100, CGFloat(y))
     }
     
-    func spawnFloorSequenceFive(var x: Int){
-        var aFloor = CCBReader.load("Floor") as! Floor
+    func spawnFloorSequenceFive(var y: Int){
+        var aFloor = CCBReader.load("Floor5") as! Floor
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(80, CGFloat(x))
+        aFloor.position = ccp(80, CGFloat(y))
     }
     
     func parentPhysics(var x: CCNode!){
