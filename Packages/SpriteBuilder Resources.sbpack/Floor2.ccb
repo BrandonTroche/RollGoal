@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -219,7 +219,7 @@
 					<key>dynamic</key>
 					<false/>
 					<key>elasticity</key>
-					<real>0.30000001192092896</real>
+					<real>0.0</real>
 					<key>friction</key>
 					<real>0.30000001192092896</real>
 					<key>points</key>
@@ -355,8 +355,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -388,7 +386,7 @@
 			<key>dynamic</key>
 			<false/>
 			<key>elasticity</key>
-			<real>0.30000001192092896</real>
+			<real>0.0</real>
 			<key>friction</key>
 			<real>0.30000001192092896</real>
 			<key>points</key>
@@ -524,6 +522,8 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

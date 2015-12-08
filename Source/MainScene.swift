@@ -7,6 +7,9 @@ Notes:
 
     Bounding positions on boundaries are x = 38.4 on the left and x = 345.6
     The distance between the boundaries in terms of the x-axis is 307.2
+
+    A good y value for algorithm is an interval of 120 between platforms
+
 */
 
 enum CurrentGameState{
@@ -35,21 +38,20 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     var sinceSpawn:CCTime = 0
     var currentPoints = 0
     var gameState: CurrentGameState = .playing
+    var spawnDelay:CCTime = 5
 
     
     func didLoadFromCCB() {
         userInteractionEnabled = true       //Start user interaction
-        gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
+        //gamePhysicsNode.debugDraw = true    //Show outline of all physics bodies
         topBoundary.physicsBody.sensor = true
-       /* spawnFloorSequenceOne(80)
-        spawnFloorSequenceTwo(100)
-        spawnFloorSequenceThree(120)
-        spawnFloorSequenceFour(140)
-        spawnFloorSequenceFive(190)*/
-        spawnFloorSequenceOne(0)
+        spawn(415)
+        spawn(290)
+        spawn(174)
+        spawn(50)
         print(floorQueue[floorQueue.count - 1])
         gamePhysicsNode.collisionDelegate = self
-
+        velocity = 1.0
 
     }
     
@@ -83,17 +85,19 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     func spawnFloorSequenceFour(var y: Int){
         var aFloor = CCBReader.load("Floor4") as! Floor
+        aFloor.scaleX = 0.10
+        aFloor.scaleY = 0.26
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(100, CGFloat(y))
+        aFloor.position = ccp(30, CGFloat(y))
     }
     
-    func spawnFloorSequenceFive(var y: Int){
+    /*func spawnFloorSequenceFive(var y: Int){
         var aFloor = CCBReader.load("Floor5") as! Floor
         parentPhysics(aFloor)
         push(aFloor)
         aFloor.position = ccp(80, CGFloat(y))
-    }
+    }*/
     
     func parentPhysics(var x: CCNode!){
         gamePhysicsNode.addChild(x)
@@ -107,19 +111,19 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         floorQueue.removeAtIndex(0)
     }
     
-    func spawn(){
-        let randNumber = CGFloat(arc4random_uniform(100))//Generate a random number from 0 to 100, depending on the number then I spawn one of the pre-set floors.
+    func spawn(var y: Int){
+        let randNumber = CGFloat(arc4random_uniform(60))//Generate a random number from 0 to 100, depending on the number then I spawn one of the pre-set floors.
         if (randNumber <= 20) {
-            spawnFloorSequenceOne(0)
+            spawnFloorSequenceOne(y)
         } else if (randNumber <= 40) && (randNumber > 20){
-            spawnFloorSequenceTwo(0)
+            spawnFloorSequenceTwo(y)
         } else if (randNumber <= 60) && (randNumber > 40){
-            spawnFloorSequenceThree(0)
-        } else if (randNumber <= 80) && (randNumber > 60){
-            spawnFloorSequenceFour(0)
+            spawnFloorSequenceThree(y)
+        } /*else if (randNumber <= 80) && (randNumber > 60){
+            spawnFloorSequenceFour(y)
         } else if (randNumber <= 100) && (randNumber > 80){
             spawnFloorSequenceFive(0)
-        }
+        }*/
     }
     
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCSprite!, goal: CCNode!) -> Bool {
@@ -150,13 +154,15 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
        
             sinceSpawn += delta
            
-                if(sinceSpawn > 5){
-                    //spawn()
-                    spawnFloorSequenceOne(0)
+                if(sinceSpawn > CCTime(spawnDelay)){
+                    spawn(0)
+                    //spawnFloorSequenceOne(0)
                     //spawnFloorSequenceTwo(0)
                     print(floorQueue[floorQueue.count - 1])
            
                     sinceSpawn = 0
+                    spawnDelay -= 0.2
+                    velocity += 0.5
             
             }
         }
