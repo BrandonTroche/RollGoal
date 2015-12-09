@@ -8,7 +8,7 @@
 
 import Foundation
 
-var velocity = 1.0
+var velocity = 1.0      //Global variable to allow for altering in other classes
 
 class Floor: CCSprite {
     

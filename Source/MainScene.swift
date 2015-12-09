@@ -50,15 +50,15 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         spawn(174)
         spawn(50)
         print(floorQueue[floorQueue.count - 1])
-        gamePhysicsNode.collisionDelegate = self
+        gamePhysicsNode.collisionDelegate = self    //Set the collisions on, without this collisions won't trigger
         velocity = 1.0
 
     }
     
     func spawnFloorSequenceOne(var y: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
-        aFloor.scaleX = 0.25
-        aFloor.scaleY = 0.25
+        aFloor.scaleX = 0.25                        //Scale the image on load in as the assets are rather large and need to
+        aFloor.scaleY = 0.25                        //be altered to be able to fit on the screen.
         parentPhysics(aFloor)
         push(aFloor)
         aFloor.position = ccp(20, CGFloat(y))
