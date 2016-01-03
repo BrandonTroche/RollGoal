@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -74,8 +74,8 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>653.78125</real>
-					<real>623.921875</real>
+					<real>309.78900146484375</real>
+					<real>314.98434448242188</real>
 				</array>
 			</array>
 			<key>polygons</key>
@@ -137,7 +137,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>ccbResources/RollGoal Assets/woodball.png</string>
+					<string>ccbResources/RollGoal Assets/woodballsmall.png</string>
 				</array>
 			</dict>
 			<dict>

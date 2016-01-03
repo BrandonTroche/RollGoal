@@ -57,8 +57,8 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     func spawnFloorSequenceOne(var y: Int){
         var aFloor = CCBReader.load("Floor") as! Floor
-        aFloor.scaleX = 0.25                        //Scale the image on load in as the assets are rather large and need to
-        aFloor.scaleY = 0.25                        //be altered to be able to fit on the screen.
+        aFloor.scaleX = 0.45                        //Scale the image on load in as the assets are rather large and need to
+        aFloor.scaleY = 0.42                        //be altered to be able to fit on the screen.
         parentPhysics(aFloor)
         push(aFloor)
         aFloor.position = ccp(20, CGFloat(y))
@@ -66,8 +66,8 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     func spawnFloorSequenceTwo(var y: Int){
         var aFloor = CCBReader.load("Floor2") as! Floor
-        aFloor.scaleX = 0.12
-        aFloor.scaleY = 0.23
+        aFloor.scaleX = 0.23
+        aFloor.scaleY = 0.50
         parentPhysics(aFloor)
         push(aFloor)
         //gamePhysicsNode.addChild(aFloor)
@@ -76,11 +76,11 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     
     func spawnFloorSequenceThree(var y: Int){
         var aFloor = CCBReader.load("Floor3") as! Floor
-        aFloor.scaleX = 0.25
-        aFloor.scaleY = 0.25
+        aFloor.scaleX = 0.45
+        aFloor.scaleY = 0.42
         parentPhysics(aFloor)
         push(aFloor)
-        aFloor.position = ccp(70, CGFloat(y))
+        aFloor.position = ccp(75, CGFloat(y))
     }
     
     func spawnFloorSequenceFour(var y: Int){
@@ -126,7 +126,7 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         }*/
     }
     
-    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCSprite!, goal: CCNode!) -> Bool {
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCSprite!, goal: CCNode!) -> ObjCBool {
         goal.removeFromParent()
         currentPoints++
         scoreLabel.string = String(currentPoints)
@@ -134,7 +134,7 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         return true
     }
     
-    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, death: CCNode!) -> Bool {
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, death: CCNode!) -> ObjCBool {
         gameOverUI.setScore(currentPoints)
         self.animationManager.runAnimationsForSequenceNamed("gameOver")
         gamePhysicsNode.paused = true
@@ -142,7 +142,7 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         return true
     }
     
-    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, floor: CCNode!, death: CCNode!) -> Bool {
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, floor: CCNode!, death: CCNode!) -> ObjCBool {
         gamePhysicsNode.removeChild(floorQueue[0])
         pop()
         //print(floorQueue.count)

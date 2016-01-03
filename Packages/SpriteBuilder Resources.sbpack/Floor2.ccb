@@ -143,8 +143,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-308</real>
-									<real>456</real>
+									<real>-251.97308349609375</real>
+									<real>188</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -188,8 +188,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -227,40 +225,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>26.1484375</real>
-							<real>438.13287353515625</real>
+							<real>12.75212287902832</real>
+							<real>202.99752807617188</real>
 						</array>
 						<array>
-							<real>24.984375</real>
-							<real>496.68756103515625</real>
+							<real>13.669143676757812</real>
+							<real>240.71894836425781</real>
 						</array>
 						<array>
-							<real>1215.3046875</real>
-							<real>484.42974853515625</real>
+							<real>593.21759033203125</real>
+							<real>238.89286804199219</real>
 						</array>
 						<array>
-							<real>1215.40625</real>
-							<real>434.9453125</real>
+							<real>593.08599853515625</real>
+							<real>202.82209777832031</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>1215.40625</real>
-								<real>434.9453125</real>
+								<real>593.08599853515625</real>
+								<real>202.82209777832031</real>
 							</array>
 							<array>
-								<real>1215.3046875</real>
-								<real>484.42974853515625</real>
+								<real>593.21759033203125</real>
+								<real>238.89286804199219</real>
 							</array>
 							<array>
-								<real>24.984375</real>
-								<real>496.68756103515625</real>
+								<real>13.669143676757812</real>
+								<real>240.71894836425781</real>
 							</array>
 							<array>
-								<real>26.1484375</real>
-								<real>438.13287353515625</real>
+								<real>12.75212287902832</real>
+								<real>202.99752807617188</real>
 							</array>
 						</array>
 					</array>
@@ -282,8 +280,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>1524</real>
-							<real>465</real>
+							<real>821.8489990234375</real>
+							<real>222.45315551757812</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -296,8 +294,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.019999999552965164</real>
-							<real>0.37200000882148743</real>
+							<real>0.016525000333786011</real>
+							<real>0.5932084321975708</real>
 						</array>
 					</dict>
 					<dict>
@@ -321,7 +319,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/RollGoal Assets/grassblock.png</string>
+							<string>ccbResources/RollGoal Assets/grassblocksmall.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -357,6 +355,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -394,40 +394,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>24.984405517578125</real>
-					<real>425.21881103515625</real>
+					<real>12.128490447998047</real>
+					<real>199.25369262695312</real>
 				</array>
 				<array>
-					<real>28.578125</real>
-					<real>497.43756103515625</real>
+					<real>12.750469207763672</real>
+					<real>238.08351135253906</real>
 				</array>
 				<array>
-					<real>1212.3984375</real>
-					<real>496.40631103515625</real>
+					<real>606.78778076171875</real>
+					<real>237.55718994140625</real>
 				</array>
 				<array>
-					<real>1212.234375</real>
-					<real>426.32037353515625</real>
+					<real>606.6163330078125</real>
+					<real>197.75057983398438</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>1212.234375</real>
-						<real>426.32037353515625</real>
+						<real>606.6163330078125</real>
+						<real>197.75057983398438</real>
 					</array>
 					<array>
-						<real>1212.3984375</real>
-						<real>496.40631103515625</real>
+						<real>606.78778076171875</real>
+						<real>237.55718994140625</real>
 					</array>
 					<array>
-						<real>28.578125</real>
-						<real>497.43756103515625</real>
+						<real>12.750469207763672</real>
+						<real>238.08351135253906</real>
 					</array>
 					<array>
-						<real>24.984405517578125</real>
-						<real>425.21881103515625</real>
+						<real>12.128490447998047</real>
+						<real>199.25369262695312</real>
 					</array>
 				</array>
 			</array>
@@ -463,8 +463,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.019999999552965164</real>
-					<real>0.37200000882148743</real>
+					<real>0.016662498936057091</real>
+					<real>0.59254169464111328</real>
 				</array>
 			</dict>
 			<dict>
@@ -488,7 +488,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>ccbResources/RollGoal Assets/grassblock.png</string>
+					<string>ccbResources/RollGoal Assets/grassblocksmall.png</string>
 				</array>
 			</dict>
 			<dict>

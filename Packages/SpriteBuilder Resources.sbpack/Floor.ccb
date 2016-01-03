@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -136,8 +136,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>1165.9044189453125</real>
-							<real>433.43807983398438</real>
+							<real>625</real>
+							<real>217.43807983398438</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -181,8 +181,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -210,50 +208,50 @@
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
-			<real>0.10000000149011612</real>
+			<real>1</real>
 			<key>dynamic</key>
 			<false/>
 			<key>elasticity</key>
 			<real>0.0</real>
 			<key>friction</key>
-			<real>0.0</real>
+			<real>0.30000001192092896</real>
 			<key>points</key>
 			<array>
 				<array>
-					<real>53.4921875</real>
-					<real>399.50784301757812</real>
+					<real>16.389228820800781</real>
+					<real>197.00955200195312</real>
 				</array>
 				<array>
-					<real>51.515625</real>
-					<real>490.69534301757812</real>
+					<real>15.746706962585449</real>
+					<real>242.53865051269531</real>
 				</array>
 				<array>
-					<real>1166.875</real>
-					<real>486.54690551757812</real>
+					<real>605.50775146484375</real>
+					<real>243.77183532714844</real>
 				</array>
 				<array>
-					<real>1166.875</real>
-					<real>404.64846801757812</real>
+					<real>605.42962646484375</real>
+					<real>194.69371032714844</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>1166.875</real>
-						<real>404.64846801757812</real>
+						<real>605.42962646484375</real>
+						<real>194.69371032714844</real>
 					</array>
 					<array>
-						<real>1166.875</real>
-						<real>486.54690551757812</real>
+						<real>605.50775146484375</real>
+						<real>243.77183532714844</real>
 					</array>
 					<array>
-						<real>51.515625</real>
-						<real>490.69534301757812</real>
+						<real>15.746706962585449</real>
+						<real>242.53865051269531</real>
 					</array>
 					<array>
-						<real>53.4921875</real>
-						<real>399.50784301757812</real>
+						<real>16.389228820800781</real>
+						<real>197.00955200195312</real>
 					</array>
 				</array>
 			</array>
@@ -289,8 +287,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.020162500441074371</real>
-					<real>0.37178754806518555</real>
+					<real>0.016837500035762787</real>
+					<real>0.59647494554519653</real>
 				</array>
 			</dict>
 			<dict>
@@ -314,7 +312,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>ccbResources/RollGoal Assets/grassblock.png</string>
+					<string>ccbResources/RollGoal Assets/grassblocksmall.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -350,6 +348,8 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
